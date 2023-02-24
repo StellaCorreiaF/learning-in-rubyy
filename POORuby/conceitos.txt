@@ -1,0 +1,10 @@
+Tudo é objeto em Ruby
+Ex: 
+1 + 1 = => objetos do tipo inteiro e um metodo do tipo inteiro(soma)
+
+1. + (1) => objeto do tipo inteiro, o .(dot notation/ponto) significa a invocação de um metodo, o + é o tipo do método (somar) e o (1) o parametro do metodo, que também pode ser sem ()
+1.+ 1
+nesses dois casos acima, eu acho o metodo + no objeto da esquerda passando como parametro o objeto da direita
+
+todos esses vão imprimir a soma dos numeros1
+o . é opcional na invocação do método (vide linha 3)

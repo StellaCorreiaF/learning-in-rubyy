@@ -1,0 +1,20 @@
+---
+- !ruby/object:Task
+  titulo: comer
+  descricao: pra não morrer
+  tempo: 10
+  passo_a_passo: 
+  situacao: pendente
+- !ruby/object:Task
+  titulo: lavar a louça
+  descricao: não temos mais pratos limpos
+  tempo: 15
+  passo_a_passo: 1 - separar por tipo, 2 - Começar pelos copos, 3 - Passar pelos talheres
+    e pratos, 4 - panelas
+  situacao: pendente
+- !ruby/object:Task
+  titulo: comer um lanchinho
+  descricao: não podemos pular refeições
+  tempo: 10
+  passo_a_passo: 
+  situacao: pendente

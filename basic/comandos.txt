@@ -1,0 +1,54 @@
+Para imprimir: 
+print, puts, p 
+
+Print e p: imprime o dado e o tipo de dado - usado pra debugar
+
+print é o output padrão, porém parecido com o p 
+
+puts = imprime apenas o dado. um metodo invocado no objeto
+método inspect = permite ver a estrutura do objeto, usamos no puts
+
+no terminal para testes (Sem criar arquivo e sem comando de imprimir) : irb
+
+
+
+
+#Operador de concatenação de string =>   "blablabla  #{varialvel}"
+exemplo -> who = "world"
+print "hello #{who}"
+vai imprimir "hello world"
+
+nesse operador de concatenação, o ruby vai transformar a variavel em string
+
+
+funções - palavra chave para definir = def, seria o function do js
+ex 
+def somar(a,b)
+print a + b
+end
+
+
+chamando a funcao 
+somar(1,2)
+
+podemos usar () ou não
+
+
+comentarios de codigo: 
+# uma linha
+=begin 
+
+=end 
+para bloco
+
+
+
+RSpec - framework de testes
+DSL (domain specific language)
+syntax sugarhello
+mruby
+
+
+rubocop = permite q as equipes definam seu design pattern
+
+ctrl k + C = comenta bloco

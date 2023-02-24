@@ -1,0 +1,8 @@
+pegar a task.rub
+
+transformar a estrutura de dados em uma classe
+como ficariam os metodos lá de select, map e reduce na classe?
+
+
+
+

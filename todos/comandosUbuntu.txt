@@ -1,0 +1,21 @@
+ require "fileutils"
+  File.directory?("./storage")
+  FileUtils.mkdir_p("./storage")
+  File.directory?("./storage")
+FileUtils.mkdir_p("./storage/com/sub/dirs")
+   FileUtils.remove_dir("./storage", true)
+    
+    file = File.new("./storage/data", "w+")
+    file.write("qualquer coisa")
+    file.close
+
+
+    file.read("./storage/data")
+
+    File.delete("./storage/data")
+
+     File.open("./storage/data", "w+") do |f| f.write("qqr coisa") end
+
+
+
+     no terminal do arquivo ruby = > cat ./storage/data
