@@ -1,0 +1,9 @@
+rails new app \
+-j esbuild -c bootstrap
+
+db:migrate
+
+./bin/dev
+
+
+
