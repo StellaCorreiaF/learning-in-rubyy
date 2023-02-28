@@ -6,4 +6,116 @@ db:migrate
 ./bin/dev
 
 
+para stopar o servidor - duplicidade -
+
+rails dbconsole   - para interagir com o prompt do bd
+
+.quit   /sair
+
+
+rails generate ou g  migration   nome da migration    - criar migration
+
+
+
+rails --tasks  - lista o q podemos fazer
+rails db:migrate:status   - ver o status da migration - se foi consolidada
+
+rails db:migrate  gerar a migration pro banco
+
+ - rails g migration \
+ AddNomeDaEcolunaToNomeDaTabela coluna:tipo
+
+
+ex = rails g migration AddEmbalagemToTasks embalagem:text
+
+
+excluir migration
+rails db: rollback e remover a migration nos arq
+
+ou rails g migration RemoveEmbalagemlFromTasks
+
+
+rails console - abre o irb
+
+reload!  - recarrega o console
+
+topico = Topico.new titulo: "Revisão"  - criando por instancia
+
+topico.save - salvando no banco
+
+Topico.count - select tudo da tabela
+
+topico2.persisted? - verifica se foi salvo
+topico.valid?  - verifica se o parametro é valido
+
+
+topico.errors[:titulo]  - verifica se há erros
+topico.errors.each { |e| puts e.message } - idem
+
+topico.errors.any? - depois de tentar salvar
+
+
+
+
+para add chave estrangeira
+ rails g migration AddFKToTasks
+
+task = Task.first  // retorna a primeira tarefa
+task.topico = Topico.first  // retorna o primeiro topico
+task.topico.titulo  // relaciona um com o outro
+
+
+task.save // salva o relacionamento
+
+
+
+***como ser mais explicito nas buscas***
+
+- Topico.all -  SELECT "topicos".* FROM "topicos"
+
+Topico.find(1) - pelo id 1
+
+
+ Topico.where titulo:"Casa"   - pelo atributo e valor
+ Task.where executada: true ou
+Task.where(executada: true)
+
+buscando por mais de 1 atributo
+Task.where(executada:false).where("titulo LIKE '%Roupa'")  - tendo roupa no final
+
+Task.where(executada:false).where("titulo LIKE '%comprar%'") - q tenha comprar no nome
+
+
+
+
+Task.find(2)
+task.topico = Topico.find(2)
+task.topico.titulo
+task.save
+
+
+Like no SQL
+ex:
+
+Select * from topicos where titulo like "%#{var}"
+
+traduzindo = like "%busca"     - que termine com busca
+
+
+Associação Bi-direcional
+
+anotar relacionamento nas duas classes. ver task e topico
+
+topico = Topico.find_by(titulo: "Casa")   - se tiver mais de 1, retorna o primeiro
+
+
+
+
+
+
+
+
+
+
+
 
