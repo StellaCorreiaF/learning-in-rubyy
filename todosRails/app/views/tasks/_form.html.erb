@@ -20,7 +20,18 @@
     <%= form.label :descricao, style: "display: block" %>
     <%= form.rich_text_area :descricao %>
   </div>
-
+  <div>
+    <%= form.label :vencimento, style: "display: block" %>
+    <%= form.date_select :vencimento %>
+  </div>
+  <div>
+    <%= form.label :responsavel, style: "display: block" %>
+    <%= form.text_field :responsavel %>
+  </div>
+  <div>
+    <%= form.label :executada, style: "display: block" %>
+    <%= form.check_box :executada, {}, 'true', 'false' %>
+  </div>
   <div>
     <%= form.submit %>
   </div>
