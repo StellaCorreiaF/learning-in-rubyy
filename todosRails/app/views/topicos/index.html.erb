@@ -1,0 +1,12 @@
+<p style="color: green"><%= notice %></p>
+<%= link_to "Novo Tópico", new_topico_path %>
+<h1 style="color: #0c63e4">Tópicos</h1>
+
+<div id="tasks">
+  <% @topicos.each do |t| %>
+    <%= render t %>
+    <p>
+      <%= link_to "Show this topic", t %>
+    </p>
+  <% end %>
+</div>

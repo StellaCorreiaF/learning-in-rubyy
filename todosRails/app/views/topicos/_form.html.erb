@@ -1,0 +1,19 @@
+<%= form_with(model: @topico) do |form| %>
+  <% if @topico.errors.any? %>
+    <div style="color: red">
+
+      <ul>
+        <% @topico.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div>
+    <label style="display: block" for="topico_titulo">Titulo</label>
+    <input type="text" name="topico[titulo]" id="topico_titulo"/>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
