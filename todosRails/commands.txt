@@ -108,6 +108,7 @@ anotar relacionamento nas duas classes. ver task e topico
 
 topico = Topico.find_by(titulo: "Casa")   - se tiver mais de 1, retorna o primeiro
 
+curl http://localhost:3000/tasks -H "Accept: application/json" | jq   - imprimir o json no terminal
 
 
 
