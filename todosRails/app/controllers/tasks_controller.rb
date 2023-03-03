@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: %i[ show edit update destroy ]
+  before_action :set_task, only: %i[ show edit update destroy  ]
 
   # GET /tasks or /tasks.json
   def index
@@ -57,6 +57,13 @@ class TasksController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  # @return [Task]
+  #def task_topico
+
+  # @task = Task.find(params[:topico_id ])
+
+  # end
 
   private
 
