@@ -13,6 +13,7 @@ class TasksController < ApplicationController
   # GET /tasks/new
   def new
     @task = Task.new
+    @topicos = Topico.all
   end
 
   # GET /tasks/1/edit
@@ -58,14 +59,15 @@ class TasksController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_task
-      @task = Task.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def task_params
+  # Use callbacks to share common setup or constraints between actions.
+  def set_task
+    @task = Task.find(params[:id])
+  end
 
-      params.require(:task).permit(:titulo, :descricao, :vencimento, :responsavel, :executada)
-    end
+  # Only allow a list of trusted parameters through.
+  def task_params
+    params.require(:task).permit(:titulo, :descricao, :vencimento, :responsavel, :executada, :topico_id)
+  end
+
 end
