@@ -1,9 +1,10 @@
 class TopicosController < ApplicationController
   # execute o set_topico antes das ações show, edit e update      - pq este método é privado
+
   before_action :set_topico, only: %i[ show edit update destroy ]
 
   def index
-    @topicos = Topico.all
+    @topicos = current_user.topicos
     # usamos o @ para possibilitar a interação entre controller e view[html.erb]
   end
 
@@ -24,10 +25,15 @@ class TopicosController < ApplicationController
   def create
     # topico_params = params.require(:topico).permit(:titulo)  - substituimos pelo metodo params
     @topico = Topico.new(topico_params)
-    if @topico.save
-      redirect_to topico_url(@topico), notice: "Tópico criado"
-    else
-      render :new, status: :unprocessable_entity
+    @topico.user = current_user
+    respond_to do |format|
+      if @topico.save
+        format.html { redirect_to topico_url(@topico), notice: "Topico was successfully created." }
+        format.json { render :show, status: :created, location: @topico }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @topico.errors, status: :unprocessable_entity }
+      end
     end
   end
 

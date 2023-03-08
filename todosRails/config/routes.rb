@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
+  root to: "welcome#index"
+  devise_for :users
   resources :tasks
-  resources :topicos
+  resources :topicos do
+    resources :tasks, only: [:new]
+    end
+
   #resources substitui essas rotas abaixo - o mapeamento delas
   # root to: redirect("/tasks")
   # get "/topicos", to: "topicos#index"
@@ -11,5 +16,6 @@ Rails.application.routes.draw do
   # patch "topicos/:id", to: "topicos#update"
   # put "topicos/:id", to: "topicos#update"
   # delete "topicos/:id", to: "topicos#destroy"
+  # post "topicos/:id/tasks/new", to: "topicos#tasks#create"
 
 end

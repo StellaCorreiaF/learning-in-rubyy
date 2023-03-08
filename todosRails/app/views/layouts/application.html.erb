@@ -34,9 +34,8 @@
 </head>
 
 <body>
-<div class="container">
-  <%= yield %>
-</div>
+<%= yield(:user_panel) if content_for?(:user_panel) %>
+<%= yield %>
 <footer class="mt-5 text-center">
   <div class="container">
     Stella Oliveira - Ruby Developer <%= Time.now.year %>
