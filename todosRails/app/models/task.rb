@@ -5,4 +5,5 @@ class Task < ApplicationRecord
   validates :titulo, length: { minimum: 3 }, uniqueness: true
   belongs_to :topico
   belongs_to :user
+
 end

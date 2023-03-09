@@ -16,6 +16,6 @@ Rails.application.routes.draw do
   # patch "topicos/:id", to: "topicos#update"
   # put "topicos/:id", to: "topicos#update"
   # delete "topicos/:id", to: "topicos#destroy"
-  # post "topicos/:id/tasks/new", to: "topicos#tasks#create"
+
 
 end
