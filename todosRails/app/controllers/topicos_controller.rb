@@ -56,6 +56,7 @@ class TopicosController < ApplicationController
     redirect_to topicos_url, notice: "Tópico Removido"
   end
 
+
   private
 
   # criamos o metodo set_topico para não repetirmos código. Como os metodos edit, show e delete localizam pelo id, ficaria repetitivo
