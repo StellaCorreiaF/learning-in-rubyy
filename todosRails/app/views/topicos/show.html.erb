@@ -3,7 +3,7 @@
   <%= link_to "Topicos", topicos_path %>
   <%= link_to "Editar tópico", edit_topico_path(@topico) %>
   <%= button_to "Excluir tópico", @topico, method: :delete%>
-  <%= button_to "Nova tarefa", new_topico_task_path(@topico) %>
+  <%= link_to "Nova tarefa", new_topico_task_path(@topico) %>
 </div>
 <% if notice.nil?.present? %>
   <p style="color: green"><%= notice %></p>

@@ -34,8 +34,10 @@
   </div>
   <div>
     <%= form.label :topico, style: "display: block" %>
-    <%= form.collection_select(:topico_id, @topicos, :id, :titulo, prompt: "Escolha um tópico",
-                               selected: @selected) %>
+    <%= form.collection_select(:topico_id, @topicos, :id, :titulo,
+                               prompt: "Escolha um tópico",
+                               selected: @selected
+        ) %>
 
   </div>
 
