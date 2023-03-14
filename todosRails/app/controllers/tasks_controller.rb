@@ -31,7 +31,8 @@ class TasksController < ApplicationController
     respond_to do |format|
       if @task.save
         if current_user.too_lazzy?
-          UserMailer.with(user: current_user).too_lazy.deliver_now
+          UserMailer.with(user: current_user).too_lazy.deliver_later
+          SearchGifJob.perform_later(@task)
         end
         format.html { redirect_to task_url(@task), notice: "Task was successfully created." }
         format.json { render :show, status: :created, location: @task }

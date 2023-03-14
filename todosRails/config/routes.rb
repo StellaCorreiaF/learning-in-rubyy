@@ -1,4 +1,8 @@
+require "sidekiq/web"
+
 Rails.application.routes.draw do
+  mount Sidekiq::Web => "/sidekiq" if Rails.env.development?
+
   root to: "welcome#index"
   devise_for :users
   resources :tasks

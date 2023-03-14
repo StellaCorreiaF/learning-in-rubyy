@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_08_145437) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_14_132551) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -49,9 +49,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_08_145437) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "data_migrations", primary_key: "version", id: :string, force: :cascade do |t|
-  end
-
   create_table "tasks", force: :cascade do |t|
     t.string "titulo"
     t.text "descricao"
@@ -62,6 +59,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_08_145437) do
     t.boolean "executada", default: false
     t.integer "topico_id"
     t.integer "user_id"
+    t.string "gif"
     t.index ["topico_id"], name: "index_tasks_on_topico_id"
     t.index ["user_id"], name: "index_tasks_on_user_id"
   end
